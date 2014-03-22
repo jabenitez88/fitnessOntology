@@ -6,7 +6,28 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5> .
 
-<http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5> rdf:type owl:Ontology .
+<http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5> rdf:type owl:Ontology ;
+                                                                               
+                                                                               owl:versionInfo "version 14.03.22"@en ;
+                                                                               
+                                                                               rdfs:comment "Ontología fitness orientada principalmente a almacenar la mayor información posible para la creación de rutinas personalizadas e individualizadas a cada persona en función de su objetivo (ganancia de fuerza, hipertrofia, resistencias, potencia o simplemente mantenimiento)."@es ;
+                                                                               
+                                                                               owl:versionInfo "versión 14.03.22"@es .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implica
+
+:implica rdf:type owl:AnnotationProperty .
+
+
+
 
 
 #################################################################
@@ -16,12 +37,51 @@
 #################################################################
 
 
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#estabilizadores
+
+:estabilizadores rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "stabilizators"@en ,
+                            "estabilizadores"@es .
+
+
+
 ###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#hasMaterial
 
 :hasMaterial rdf:type owl:ObjectProperty ;
              
-             rdfs:comment "doWith"@en ,
-                          "hechoCon"@es .
+             rdfs:label "doWith"@en ,
+                        "hechoCon"@es .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicate
+
+:implicate rdf:type owl:ObjectProperty ;
+           
+           rdfs:label "implica"@es ;
+           
+           :implica :implicate ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#isDoingWith
+
+:isDoingWith rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "isDoingWith"@en ,
+                        "esHechoCon"@es .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#sinergistas
+
+:sinergistas rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "synergists"@en ,
+                        "sinergistas"@es .
 
 
 
@@ -49,8 +109,8 @@
 
 :Auxiliar rdf:type owl:Class ;
           
-          rdfs:label "Auxiliar"@en ,
-                     "Auxiliary"@en ;
+          rdfs:label "Auxiliary"@en ,
+                     "Auxiliar"@es ;
           
           rdfs:subClassOf :Utilidad .
 
@@ -208,6 +268,15 @@
 
 
 
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Exercises
+
+:Exercises rdf:type owl:Class ;
+           
+           rdfs:label "Exercises"@en ,
+                      "Ejercicios"@es .
+
+
+
 ###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Extensores
 
 :Extensores rdf:type owl:Class ;
@@ -258,6 +327,12 @@
         
         rdfs:label "Force"@en ,
                    "Fuerza"@es ;
+        
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:unionOf ( :Empujón
+                                            :Tirón
+                                          )
+                            ] ;
         
         rdfs:subClassOf :Exercise .
 
@@ -342,6 +417,12 @@
           rdfs:label "Mechanic"@en ,
                      "Mecánica"@es ;
           
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:unionOf ( :Monoarticular
+                                              :Multiarticular
+                                            )
+                              ] ;
+          
           rdfs:subClassOf :Exercise .
 
 
@@ -375,7 +456,9 @@
 :Músculos rdf:type owl:Class ;
           
           rdfs:label "Muscles"@en ,
-                     "Músculos"@es .
+                     "Músculos"@es ;
+          
+          rdfs:subClassOf :Exercise .
 
 
 
@@ -387,6 +470,17 @@
                  "Cuello"@es ;
       
       rdfs:subClassOf :Músculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#NeckFlexion
+
+:NeckFlexion rdf:type owl:Class ;
+             
+             rdfs:label "NeckFlexion"@en ,
+                        "Flexión de cuello"@es ;
+             
+             rdfs:subClassOf :Exercises .
 
 
 
@@ -515,8 +609,7 @@
 
 :Tirón rdf:type owl:Class ;
        
-       rdfs:label "Pull"@en ,
-                  "Tirón"@es ;
+       rdfs:label "Tirón"@es ;
        
        rdfs:subClassOf :Fuerza .
 
