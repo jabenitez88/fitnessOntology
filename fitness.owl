@@ -1,0 +1,582 @@
+@prefix : <http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5> .
+
+<http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#hasMaterial
+
+:hasMaterial rdf:type owl:ObjectProperty ;
+             
+             rdfs:comment "doWith"@en ,
+                          "hechoCon"@es .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Anterior
+
+:Anterior rdf:type owl:Class ;
+          
+          rdfs:label "Anterior"@en ,
+                     "Anterior"@es ;
+          
+          rdfs:subClassOf :Deltoide .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Auxiliar
+
+:Auxiliar rdf:type owl:Class ;
+          
+          rdfs:label "Auxiliar"@en ,
+                     "Auxiliary"@en ;
+          
+          rdfs:subClassOf :Utilidad .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Back
+
+:Back rdf:type owl:Class ;
+      
+      rdfs:label "Back"@en ,
+                 "Espalda"@es ;
+      
+      rdfs:subClassOf :Músculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Barra
+
+:Barra rdf:type owl:Class ;
+       
+       rdfs:label "Barbell"@en ,
+                  "Barra"@es ;
+       
+       rdfs:subClassOf :Material .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#BicepsBrachii
+
+:BicepsBrachii rdf:type owl:Class ;
+               
+               rdfs:label "BicepsBrachii"@en ,
+                          "BícepsBraquial"@es ;
+               
+               rdfs:subClassOf :UpperArms .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Brachialis
+
+:Brachialis rdf:type owl:Class ;
+            
+            rdfs:label "Brachialis"@en ,
+                       "Braquial"@es ;
+            
+            rdfs:subClassOf :UpperArms .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Braquiorradial
+
+:Braquiorradial rdf:type owl:Class ;
+                
+                rdfs:label "Brachioradialis"@en ,
+                           "Braquiorradial"@es ;
+                
+                rdfs:subClassOf :Forearms .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Básico
+
+:Básico rdf:type owl:Class ;
+        
+        rdfs:label "Basic"@en ,
+                   "Básico"@es ;
+        
+        rdfs:subClassOf :Utilidad .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Cable
+
+:Cable rdf:type owl:Class ;
+       
+       rdfs:label "Cable"@en ,
+                  "Cable"@es ;
+       
+       rdfs:subClassOf :Material .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Calves
+
+:Calves rdf:type owl:Class ;
+        
+        rdfs:label "Calves"@en ,
+                   "Terneros"@es ;
+        
+        rdfs:subClassOf :Músculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Chest
+
+:Chest rdf:type owl:Class ;
+       
+       rdfs:label "Chest"@en ,
+                  "Pecho"@es ;
+       
+       rdfs:subClassOf :Músculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Cintura
+
+:Cintura rdf:type owl:Class ;
+         
+         rdfs:label "Waist"@en ,
+                    "Cintura"@es ;
+         
+         rdfs:subClassOf :Músculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Deltoide
+
+:Deltoide rdf:type owl:Class ;
+          
+          rdfs:label "Deltoid"@en ,
+                     "Deltoide"@es ;
+          
+          rdfs:subClassOf :Hombros .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Dumbbell
+
+:Dumbbell rdf:type owl:Class ;
+          
+          rdfs:label "Dumbbell"@en ,
+                     "Mancuernas"@es ;
+          
+          rdfs:subClassOf :Material .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Empujón
+
+:Empujón rdf:type owl:Class ;
+         
+         rdfs:label "Push"@en ,
+                    "Empujón"@es ;
+         
+         rdfs:subClassOf :Fuerza .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Exercise
+
+:Exercise rdf:type owl:Class ;
+          
+          rdfs:label "Clasificación"@es ,
+                     "Classification"@es .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Extensores
+
+:Extensores rdf:type owl:Class ;
+            
+            rdfs:label "Extensors"@en ,
+                       "Extensores"@es ;
+            
+            rdfs:subClassOf :Wrist .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Flexión_de_Cuello
+
+:Flexión_de_Cuello rdf:type owl:Class ;
+                   
+                   rdfs:label "Neck Flexion"@en ,
+                              "Flexión de Cuello"@es ;
+                   
+                   rdfs:subClassOf :Sternocleidomastoid .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Flexors
+
+:Flexors rdf:type owl:Class ;
+         
+         rdfs:label "Flexors"@en ,
+                    "Flexores"@es ;
+         
+         rdfs:subClassOf :Wrist .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Forearms
+
+:Forearms rdf:type owl:Class ;
+          
+          rdfs:label "Forearms"@en ,
+                     "BrazosInferior"@es ;
+          
+          rdfs:subClassOf :Músculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Fuerza
+
+:Fuerza rdf:type owl:Class ;
+        
+        rdfs:label "Force"@en ,
+                   "Fuerza"@es ;
+        
+        rdfs:subClassOf :Exercise .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#General
+
+:General rdf:type owl:Class ;
+         
+         rdfs:label "General"@en ,
+                    "General"@es ;
+         
+         rdfs:subClassOf :Back .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Hips
+
+:Hips rdf:type owl:Class ;
+      
+      rdfs:label "Hips"@en ,
+                 "Caderas"@es ;
+      
+      rdfs:subClassOf :Músculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Hombros
+
+:Hombros rdf:type owl:Class ;
+         
+         rdfs:label "Shoulders"@en ,
+                    "Hombros"@es ;
+         
+         rdfs:subClassOf :Músculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Isometric
+
+:Isometric rdf:type owl:Class ;
+           
+           rdfs:label "Isometric"@en ,
+                      "Isométrico"@es ;
+           
+           rdfs:subClassOf :Material .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Lateral
+
+:Lateral rdf:type owl:Class ;
+         
+         rdfs:label "Lateral"@en ,
+                    "Lateral"@es ;
+         
+         rdfs:subClassOf :Deltoide .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Latissimus_Dorsi_&_Teres_Major
+
+<http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Latissimus_Dorsi_&_Teres_Major> rdf:type owl:Class ;
+                                                                                                              
+                                                                                                              rdfs:label "LatissimusDorsi&TeresMajor"@en ,
+                                                                                                                         "DorsalMayorYRedondoMayor"@es ;
+                                                                                                              
+                                                                                                              rdfs:subClassOf :Back .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Material
+
+:Material rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Mecánica
+
+:Mecánica rdf:type owl:Class ;
+          
+          rdfs:label "Mechanic"@en ,
+                     "Mecánica"@es ;
+          
+          rdfs:subClassOf :Exercise .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Monoarticular
+
+:Monoarticular rdf:type owl:Class ;
+               
+               rdfs:label "Isolation"@en ,
+                          "Monoarticular"@es ;
+               
+               rdfs:subClassOf :Mecánica ;
+               
+               owl:disjointWith :Multiarticular .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Multiarticular
+
+:Multiarticular rdf:type owl:Class ;
+                
+                rdfs:label "Compound"@en ,
+                           "Multiarticular"@es ;
+                
+                rdfs:subClassOf :Mecánica .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Músculos
+
+:Músculos rdf:type owl:Class ;
+          
+          rdfs:label "Muscles"@en ,
+                     "Músculos"@es .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Neck
+
+:Neck rdf:type owl:Class ;
+      
+      rdfs:label "Neck"@en ,
+                 "Cuello"@es ;
+      
+      rdfs:subClassOf :Músculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Palanca-PlacaDeCarga
+
+:Palanca-PlacaDeCarga rdf:type owl:Class ;
+                      
+                      rdfs:label "Lever-PlateLoaded"@en ,
+                                 "Palanca-PlacaCarga"@es ;
+                      
+                      rdfs:subClassOf :Material .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Palanca-Selectorizado
+
+:Palanca-Selectorizado rdf:type owl:Class ;
+                       
+                       rdfs:label "Lever-Selectorized"@en ,
+                                  "Palanca-Selectorizado"@es ;
+                       
+                       rdfs:subClassOf :Material .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#PesoCorporal
+
+:PesoCorporal rdf:type owl:Class ;
+              
+              rdfs:label "BodyWeight"@en ,
+                         "PesoCorporal"@es ;
+              
+              rdfs:subClassOf :Material .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Posterior
+
+:Posterior rdf:type owl:Class ;
+           
+           rdfs:label "Posterior"@en ,
+                      "Posterior"@es ;
+           
+           rdfs:subClassOf :Deltoide .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Pronadores
+
+:Pronadores rdf:type owl:Class ;
+            
+            rdfs:label "Pronators"@en ,
+                       "Pronadores"@es ;
+            
+            rdfs:subClassOf :Forearms .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Splenius
+
+:Splenius rdf:type owl:Class ;
+          
+          rdfs:label "Splenius"@en ,
+                     "Esplenio"@es ;
+          
+          rdfs:subClassOf :Neck .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Sternocleidomastoid
+
+:Sternocleidomastoid rdf:type owl:Class ;
+                     
+                     rdfs:label "Sternocleidomastoid"@en ,
+                                "Esternocleidomastoideo"@es ;
+                     
+                     rdfs:subClassOf :Neck .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Stretch
+
+:Stretch rdf:type owl:Class ;
+         
+         rdfs:label "Stretch"@en ,
+                    "Estirar"@es ;
+         
+         rdfs:subClassOf :Material .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Supinators
+
+:Supinators rdf:type owl:Class ;
+            
+            rdfs:label "Supinators"@en ,
+                       "Supinadores"@es ;
+            
+            rdfs:subClassOf :Forearms .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Supraspinatus
+
+:Supraspinatus rdf:type owl:Class ;
+               
+               rdfs:label "Supraspinatus"@en ,
+                          "Supraespinoso"@es ;
+               
+               rdfs:subClassOf :Hombros .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Thighs
+
+:Thighs rdf:type owl:Class ;
+        
+        rdfs:label "Thighs"@en ,
+                   "Muslos"@es ;
+        
+        rdfs:subClassOf :Músculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Tirón
+
+:Tirón rdf:type owl:Class ;
+       
+       rdfs:label "Pull"@en ,
+                  "Tirón"@es ;
+       
+       rdfs:subClassOf :Fuerza .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#TrícepsBraquial
+
+:TrícepsBraquial rdf:type owl:Class ;
+                 
+                 rdfs:label "TricepsBrachii"@en ,
+                            "TrícepsBraquial"@es ;
+                 
+                 rdfs:subClassOf :UpperArms .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#UpperArms
+
+:UpperArms rdf:type owl:Class ;
+           
+           rdfs:label "UpperArms"@en ,
+                      "BrazoSuperior"@es ;
+           
+           rdfs:subClassOf :Músculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Utilidad
+
+:Utilidad rdf:type owl:Class ;
+          
+          rdfs:label "Utility"@en ,
+                     "Utilidad"@es ;
+          
+          rdfs:subClassOf :Exercise .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Weighted
+
+:Weighted rdf:type owl:Class ;
+          
+          rdfs:label "Weighted"@en ,
+                     "Balanceado"@es ;
+          
+          rdfs:subClassOf :Material .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Wrist
+
+:Wrist rdf:type owl:Class ;
+       
+       rdfs:label "Wrist"@en ,
+                  "Muñeca"@es ;
+       
+       rdfs:subClassOf :Forearms .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+
