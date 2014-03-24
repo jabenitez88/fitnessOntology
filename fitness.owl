@@ -37,21 +37,29 @@
 #################################################################
 
 
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#esImplicado
+
+:esImplicado rdf:type owl:ObjectProperty ;
+             
+             owl:inverseOf :implicate .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#esMecánicamente
+
+:esMecánicamente rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "typeOfMechanics"@en ,
+                            "tipoDeMecánica"@es .
+
+
+
 ###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#estabilizadores
 
 :estabilizadores rdf:type owl:ObjectProperty ;
                  
-                 rdfs:label "stabilizators"@en ,
-                            "estabilizadores"@es .
-
-
-
-###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#hasMaterial
-
-:hasMaterial rdf:type owl:ObjectProperty ;
-             
-             rdfs:label "doWith"@en ,
-                        "hechoCon"@es .
+                 rdfs:label "hasStabilizators"@en ,
+                            "tieneEstabilizadores"@es .
 
 
 
@@ -60,8 +68,6 @@
 :implicate rdf:type owl:ObjectProperty ;
            
            rdfs:label "implica"@es ;
-           
-           :implica :implicate ;
            
            rdfs:subPropertyOf owl:topObjectProperty .
 
@@ -76,12 +82,21 @@
 
 
 
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#relacionadoCon
+
+:relacionadoCon rdf:type owl:ObjectProperty ,
+                         owl:SymmetricProperty ;
+                
+                rdfs:domain :Músculos .
+
+
+
 ###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#sinergistas
 
 :sinergistas rdf:type owl:ObjectProperty ;
              
-             rdfs:label "synergists"@en ,
-                        "sinergistas"@es .
+             rdfs:label "hasSynergists"@en ,
+                        "tieneSinergistas"@es .
 
 
 
@@ -92,6 +107,37 @@
 #    Classes
 #
 #################################################################
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Abdomen
+
+:Abdomen rdf:type owl:Class ;
+         
+         rdfs:label "Core"@en ,
+                    "Abdomen"@es ;
+         
+         rdfs:subClassOf :TrenSuperior .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Adductors
+
+:Adductors rdf:type owl:Class ;
+           
+           rdfs:label "Adductors"@en ,
+                      "Aductores"@es ;
+           
+           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                 owl:onProperty :relacionadoCon ;
+                                 owl:someValuesFrom :Gracilis
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :relacionadoCon ;
+                                 owl:someValuesFrom :Pectineus
+                               ] ;
+           
+           rdfs:subClassOf :Hips .
+
 
 
 ###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Anterior
@@ -123,7 +169,7 @@
       rdfs:label "Back"@en ,
                  "Espalda"@es ;
       
-      rdfs:subClassOf :Músculos .
+      rdfs:subClassOf :TrenSuperior .
 
 
 
@@ -200,7 +246,7 @@
         rdfs:label "Calves"@en ,
                    "Terneros"@es ;
         
-        rdfs:subClassOf :Músculos .
+        rdfs:subClassOf :TrenSuperior .
 
 
 
@@ -211,7 +257,7 @@
        rdfs:label "Chest"@en ,
                   "Pecho"@es ;
        
-       rdfs:subClassOf :Músculos .
+       rdfs:subClassOf :TrenSuperior .
 
 
 
@@ -222,7 +268,7 @@
          rdfs:label "Waist"@en ,
                     "Cintura"@es ;
          
-         rdfs:subClassOf :Músculos .
+         rdfs:subClassOf :TrenSuperior .
 
 
 
@@ -317,7 +363,7 @@
           rdfs:label "Forearms"@en ,
                      "BrazosInferior"@es ;
           
-          rdfs:subClassOf :Músculos .
+          rdfs:subClassOf :TrenSuperior .
 
 
 
@@ -338,6 +384,17 @@
 
 
 
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Gastrocnemius
+
+:Gastrocnemius rdf:type owl:Class ;
+               
+               rdfs:label "Gastrocnemius"@en ,
+                          "Gastrocnemius"@es ;
+               
+               rdfs:subClassOf :TrenInferior .
+
+
+
 ###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#General
 
 :General rdf:type owl:Class ;
@@ -349,6 +406,61 @@
 
 
 
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Gluteus
+
+:Gluteus rdf:type owl:Class ;
+         
+         rdfs:label "Gluteus"@en ,
+                    "Gluteos"@es ;
+         
+         rdfs:subClassOf :TrenInferior .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#GluteusMaximus
+
+:GluteusMaximus rdf:type owl:Class ;
+                
+                rdfs:label "GluteusMaximus"@en ,
+                           "GlúteoMayor"@es ;
+                
+                rdfs:subClassOf :Gluteus .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#GlúteoMedio
+
+:GlúteoMedio rdf:type owl:Class ;
+             
+             rdfs:label "GluteusMedius"@en ,
+                        "GlúteoMedio"@es ;
+             
+             rdfs:subClassOf :Gluteus .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#GlúteoMenor
+
+:GlúteoMenor rdf:type owl:Class ;
+             
+             rdfs:label "GluteusMinimus"@en ,
+                        "GlúteoMenor"@es ;
+             
+             rdfs:subClassOf :Gluteus .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Gracilis
+
+:Gracilis rdf:type owl:Class ;
+          
+          rdfs:label "Gracilis"@en ,
+                     "Gracilis"@es ;
+          
+          rdfs:subClassOf :TrenInferior .
+
+
+
 ###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Hips
 
 :Hips rdf:type owl:Class ;
@@ -356,7 +468,7 @@
       rdfs:label "Hips"@en ,
                  "Caderas"@es ;
       
-      rdfs:subClassOf :Músculos .
+      rdfs:subClassOf :TrenInferior .
 
 
 
@@ -367,7 +479,29 @@
          rdfs:label "Shoulders"@en ,
                     "Hombros"@es ;
          
-         rdfs:subClassOf :Músculos .
+         rdfs:subClassOf :TrenSuperior .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Iliopsoas
+
+:Iliopsoas rdf:type owl:Class ;
+           
+           rdfs:label "Iliopsoas"@en ,
+                      "Iliopsoas"@es ;
+           
+           rdfs:subClassOf :TrenInferior .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Infraspinatus
+
+:Infraspinatus rdf:type owl:Class ;
+               
+               rdfs:label "Infraspinatus"@en ,
+                          "Infraespinoso"@es ;
+               
+               rdfs:subClassOf :Hombros .
 
 
 
@@ -379,6 +513,17 @@
                       "Isométrico"@es ;
            
            rdfs:subClassOf :Material .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Isquiotibiales
+
+:Isquiotibiales rdf:type owl:Class ;
+                
+                rdfs:label "Hamstrings"@en ,
+                           "Isquiotibiales"@es ;
+                
+                rdfs:subClassOf :TrenInferior .
 
 
 
@@ -469,7 +614,7 @@
       rdfs:label "Neck"@en ,
                  "Cuello"@es ;
       
-      rdfs:subClassOf :Músculos .
+      rdfs:subClassOf :TrenSuperior .
 
 
 
@@ -480,7 +625,23 @@
              rdfs:label "NeckFlexion"@en ,
                         "Flexión de cuello"@es ;
              
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :implicate ;
+                                   owl:someValuesFrom :Sternocleidomastoid
+                                 ] ;
+             
              rdfs:subClassOf :Exercises .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Obliques
+
+:Obliques rdf:type owl:Class ;
+          
+          rdfs:label "Obliques"@en ,
+                     "Oblicuos"@es ;
+          
+          rdfs:subClassOf :Abdomen .
 
 
 
@@ -503,6 +664,39 @@
                                   "Palanca-Selectorizado"@es ;
                        
                        rdfs:subClassOf :Material .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Pectineus
+
+:Pectineus rdf:type owl:Class ;
+           
+           rdfs:label "Pectineus"@en ,
+                      "Pectíneo"@es ;
+           
+           rdfs:subClassOf :TrenInferior .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#PectoralMayor
+
+:PectoralMayor rdf:type owl:Class ;
+               
+               rdfs:label "PectoralisMajor"@en ,
+                          "PectoralMayor"@es ;
+               
+               rdfs:subClassOf :Chest .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#PectoralMenor
+
+:PectoralMenor rdf:type owl:Class ;
+               
+               rdfs:label "PectoralisMinor"@en ,
+                          "PectoralMenor"@es ;
+               
+               rdfs:subClassOf :Chest .
 
 
 
@@ -536,6 +730,72 @@
                        "Pronadores"@es ;
             
             rdfs:subClassOf :Forearms .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Quadriceps
+
+:Quadriceps rdf:type owl:Class ;
+            
+            rdfs:label "Quadriceps"@en ,
+                       "Cuádriceps"@es ;
+            
+            rdfs:subClassOf :TrenInferior .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#RectusAbdominis
+
+:RectusAbdominis rdf:type owl:Class ;
+                 
+                 rdfs:label "RectusAbdominis"@en ,
+                            "RectoAbdominal"@es ;
+                 
+                 rdfs:subClassOf :Abdomen .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Rhomboids
+
+:Rhomboids rdf:type owl:Class ;
+           
+           rdfs:label "Rhomboids"@en ,
+                      "Romboide"@es ;
+           
+           rdfs:subClassOf :Back .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Sartorius
+
+:Sartorius rdf:type owl:Class ;
+           
+           rdfs:label "Sartorius"@en ,
+                      "Sartorio"@es ;
+           
+           rdfs:subClassOf :TrenInferior .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#SerratusAnterior
+
+:SerratusAnterior rdf:type owl:Class ;
+                  
+                  rdfs:label "SerratusAnterior"@en ,
+                             "Serrato anterior"@es ;
+                  
+                  rdfs:subClassOf :Chest .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Soleus
+
+:Soleus rdf:type owl:Class ;
+        
+        rdfs:label "Soleus"@en ,
+                   "Soleus"@es ;
+        
+        rdfs:subClassOf :TrenInferior .
 
 
 
@@ -601,7 +861,7 @@
         rdfs:label "Thighs"@en ,
                    "Muslos"@es ;
         
-        rdfs:subClassOf :Músculos .
+        rdfs:subClassOf :TrenInferior .
 
 
 
@@ -612,6 +872,37 @@
        rdfs:label "Tirón"@es ;
        
        rdfs:subClassOf :Fuerza .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#TransverseAbs
+
+:TransverseAbs rdf:type owl:Class ;
+               
+               rdfs:label "TransverseAbs"@en ,
+                          "TransversoAbdominal"@es ;
+               
+               rdfs:subClassOf :Abdomen .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#TrenInferior
+
+:TrenInferior rdf:type owl:Class ;
+              
+              rdfs:label "TrenInferior"@es ;
+              
+              rdfs:subClassOf :Músculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#TrenSuperior
+
+:TrenSuperior rdf:type owl:Class ;
+              
+              rdfs:label "TrenSuperior"@es ;
+              
+              rdfs:subClassOf :Músculos .
 
 
 
@@ -633,7 +924,7 @@
            rdfs:label "UpperArms"@en ,
                       "BrazoSuperior"@es ;
            
-           rdfs:subClassOf :Músculos .
+           rdfs:subClassOf :TrenSuperior .
 
 
 
