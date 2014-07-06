@@ -1,0 +1,1561 @@
+@prefix : <http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5> .
+
+<http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5> rdf:type owl:Ontology ;
+                                                                               
+                                                                               owl:versionInfo "version 14.03.22"@en ;
+                                                                               
+                                                                               rdfs:comment "Ontología fitness orientada principalmente a almacenar la mayor información posible para la creación de rutinas personalizadas e individualizadas a cada persona en función de su objetivo (ganancia de fuerza, hipertrofia, resistencias, potencia o simplemente mantenimiento)."@es ;
+                                                                               
+                                                                               owl:versionInfo "versión 14.03.22"@es .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#esDeTipo
+
+:esDeTipo rdf:type owl:ObjectProperty ;
+          
+          rdfs:domain :Ejercicios ;
+          
+          rdfs:range :Tipos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#esParteDe
+
+:esParteDe rdf:type owl:FunctionalProperty ,
+                    owl:ObjectProperty ,
+                    owl:TransitiveProperty .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#esPrincipalDe
+
+:esPrincipalDe rdf:type owl:ObjectProperty ;
+               
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicaPrincipalmenteA
+
+:implicaPrincipalmenteA rdf:type owl:IrreflexiveProperty ,
+                                 owl:ObjectProperty ;
+                        
+                        rdfs:domain :Ejercicios ;
+                        
+                        rdfs:range :Grupos_musculares .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#durezaRelativa
+
+:durezaRelativa rdf:type owl:DatatypeProperty ;
+                
+                rdfs:domain :Ejercicios ;
+                
+                rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionAbdomenInferior
+
+:implicacionAbdomenInferior rdf:type owl:DatatypeProperty ;
+                            
+                            rdfs:subPropertyOf :implicacionTorso ;
+                            
+                            rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionAbdomenSuperior
+
+:implicacionAbdomenSuperior rdf:type owl:DatatypeProperty ;
+                            
+                            rdfs:subPropertyOf :implicacionTorso ;
+                            
+                            rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionAntebrazo
+
+:implicacionAntebrazo rdf:type owl:DatatypeProperty ;
+                      
+                      rdfs:subPropertyOf :implicacionBrazo ;
+                      
+                      rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionBiceps
+
+:implicacionBiceps rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:subPropertyOf :implicacionBrazo ;
+                   
+                   rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionBrazo
+
+:implicacionBrazo rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:subPropertyOf :implicacionMusculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionCuadriceps
+
+:implicacionCuadriceps rdf:type owl:DatatypeProperty ;
+                       
+                       rdfs:subPropertyOf :implicacionPierna ;
+                       
+                       rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionDeltoidesAnterior
+
+:implicacionDeltoidesAnterior rdf:type owl:DatatypeProperty ;
+                              
+                              rdfs:subPropertyOf :implicacionHombro ;
+                              
+                              rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionDeltoidesMedio
+
+:implicacionDeltoidesMedio rdf:type owl:DatatypeProperty ;
+                           
+                           rdfs:subPropertyOf :implicacionHombro ;
+                           
+                           rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionDeltoidesPosterior
+
+:implicacionDeltoidesPosterior rdf:type owl:DatatypeProperty ;
+                               
+                               rdfs:subPropertyOf :implicacionHombro ;
+                               
+                               rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionEspalda
+
+:implicacionEspalda rdf:type owl:DatatypeProperty ;
+                    
+                    rdfs:subPropertyOf :implicacionMusculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionEspaldaDorsal
+
+:implicacionEspaldaDorsal rdf:type owl:DatatypeProperty ;
+                          
+                          rdfs:subPropertyOf :implicacionEspalda ;
+                          
+                          rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionEspaldaRedondo
+
+:implicacionEspaldaRedondo rdf:type owl:DatatypeProperty ;
+                           
+                           rdfs:subPropertyOf :implicacionEspalda ;
+                           
+                           rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionFemoral
+
+:implicacionFemoral rdf:type owl:DatatypeProperty ;
+                    
+                    rdfs:subPropertyOf :implicacionPierna ;
+                    
+                    rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionGemelo
+
+:implicacionGemelo rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:subPropertyOf :implicacionPierna ;
+                   
+                   rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionGluteo
+
+:implicacionGluteo rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:subPropertyOf :implicacionPierna ;
+                   
+                   rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionHombro
+
+:implicacionHombro rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:subPropertyOf :implicacionMusculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionMusculos
+
+:implicacionMusculos rdf:type owl:DatatypeProperty ;
+                     
+                     rdfs:domain :Ejercicios ;
+                     
+                     rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionOblicuo
+
+:implicacionOblicuo rdf:type owl:DatatypeProperty ;
+                    
+                    rdfs:subPropertyOf :implicacionTorso ;
+                    
+                    rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionPecho
+
+:implicacionPecho rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:subPropertyOf :implicacionMusculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionPectoralInferior
+
+:implicacionPectoralInferior rdf:type owl:DatatypeProperty ;
+                             
+                             rdfs:subPropertyOf :implicacionPecho ;
+                             
+                             rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionPectoralMedio
+
+:implicacionPectoralMedio rdf:type owl:DatatypeProperty ;
+                          
+                          rdfs:subPropertyOf :implicacionPecho ;
+                          
+                          rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionPectoralSuperior
+
+:implicacionPectoralSuperior rdf:type owl:DatatypeProperty ;
+                             
+                             rdfs:subPropertyOf :implicacionPecho ;
+                             
+                             rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionPierna
+
+:implicacionPierna rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:subPropertyOf :implicacionMusculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionSacroLumbar
+
+:implicacionSacroLumbar rdf:type owl:DatatypeProperty ;
+                        
+                        rdfs:subPropertyOf :implicacionEspalda ;
+                        
+                        rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionSerrato
+
+:implicacionSerrato rdf:type owl:DatatypeProperty ;
+                    
+                    rdfs:subPropertyOf :implicacionTorso ;
+                    
+                    rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionTorso
+
+:implicacionTorso rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:subPropertyOf :implicacionMusculos .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionTrapecio
+
+:implicacionTrapecio rdf:type owl:DatatypeProperty ;
+                     
+                     rdfs:subPropertyOf :implicacionEspalda ;
+                     
+                     rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#implicacionTriceps
+
+:implicacionTriceps rdf:type owl:DatatypeProperty ;
+                    
+                    rdfs:subPropertyOf :implicacionBrazo ;
+                    
+                    rdfs:range xsd:nonNegativeInteger .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Ejercicios
+
+:Ejercicios rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Entrenamiento .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Entrenamiento
+
+:Entrenamiento rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Grupos_musculares
+
+:Grupos_musculares rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :Entrenamiento .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Subgrupos_musculares
+
+:Subgrupos_musculares rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :Grupos_musculares .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Tipos
+
+:Tipos rdf:type owl:Class ;
+       
+       rdfs:subClassOf :Entrenamiento .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Abdomen
+
+:Abdomen rdf:type :Grupos_musculares ,
+                  owl:NamedIndividual ;
+         
+         :esParteDe :Torso .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Abdomen_inferior
+
+:Abdomen_inferior rdf:type :Subgrupos_musculares ,
+                           owl:NamedIndividual ;
+                  
+                  :esParteDe :Abdomen .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Abdomen_superior
+
+:Abdomen_superior rdf:type :Subgrupos_musculares ,
+                           owl:NamedIndividual ;
+                  
+                  :esParteDe :Abdomen .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Antebrazo
+
+:Antebrazo rdf:type :Subgrupos_musculares ,
+                    owl:NamedIndividual ;
+           
+           :esParteDe :Brazo .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Aperturas_en_contractor_de_pecho
+
+:Aperturas_en_contractor_de_pecho rdf:type :Ejercicios ,
+                                           owl:NamedIndividual ;
+                                  
+                                  :implicacionBiceps 1 ;
+                                  
+                                  :implicacionDeltoidesAnterior 1 ;
+                                  
+                                  :implicacionHombro 1 ;
+                                  
+                                  :implicacionBrazo 1 ;
+                                  
+                                  :durezaRelativa 14 ;
+                                  
+                                  :implicacionPectoralSuperior 2 ;
+                                  
+                                  :implicacionPectoralInferior 2 ;
+                                  
+                                  :implicacionPectoralMedio 3 ;
+                                  
+                                  :implicacionPecho 7 ;
+                                  
+                                  :implicacionMusculos 9 ;
+                                  
+                                  :esDeTipo :Auxiliar ;
+                                  
+                                  :implicaPrincipalmenteA :Pecho .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Aperturas_mancuernas_banco_inclinado
+
+:Aperturas_mancuernas_banco_inclinado rdf:type :Ejercicios ,
+                                               owl:NamedIndividual ;
+                                      
+                                      :implicacionTriceps 1 ;
+                                      
+                                      :implicacionHombro 1 ;
+                                      
+                                      :implicacionBrazo 1 ;
+                                      
+                                      :implicacionDeltoidesAnterior 1 ;
+                                      
+                                      :durezaRelativa 14 ;
+                                      
+                                      :implicacionPectoralInferior 2 ;
+                                      
+                                      :implicacionPectoralMedio 2 ;
+                                      
+                                      :implicacionPectoralSuperior 3 ;
+                                      
+                                      :implicacionPecho 7 ;
+                                      
+                                      :implicacionMusculos 9 ;
+                                      
+                                      :esDeTipo :Auxiliar ;
+                                      
+                                      :implicaPrincipalmenteA :Pecho .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Aperturas_mancuernas_banco_plano
+
+:Aperturas_mancuernas_banco_plano rdf:type :Ejercicios ,
+                                           owl:NamedIndividual ;
+                                  
+                                  :implicacionBrazo 1 ;
+                                  
+                                  :implicacionSerrato 1 ;
+                                  
+                                  :implicacionTorso 1 ;
+                                  
+                                  :implicacionTriceps 1 ;
+                                  
+                                  :implicacionHombro 1 ;
+                                  
+                                  :implicacionDeltoidesAnterior 1 ;
+                                  
+                                  :implicacionMusculos 10 ;
+                                  
+                                  :durezaRelativa 14 ;
+                                  
+                                  :implicacionPectoralSuperior 2 ;
+                                  
+                                  :implicacionPectoralInferior 2 ;
+                                  
+                                  :implicacionPectoralMedio 3 ;
+                                  
+                                  :implicacionPecho 7 ;
+                                  
+                                  :esDeTipo :Auxiliar ;
+                                  
+                                  :implicaPrincipalmenteA :Pecho .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Auxiliar
+
+:Auxiliar rdf:type :Tipos ,
+                   owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Biceps
+
+:Biceps rdf:type :Subgrupos_musculares ,
+                 owl:NamedIndividual ;
+        
+        :esParteDe :Brazo .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Biceps_en_banco_Scott
+
+:Biceps_en_banco_Scott rdf:type :Ejercicios ,
+                                owl:NamedIndividual ;
+                       
+                       :implicacionAntebrazo 1 ;
+                       
+                       :implicacionBiceps 3 ;
+                       
+                       :implicacionBrazo 4 ;
+                       
+                       :durezaRelativa 7 ;
+                       
+                       :implicaPrincipalmenteA :Biceps ;
+                       
+                       :esDeTipo :Primario .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Brazo
+
+:Brazo rdf:type :Grupos_musculares ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Brazos_en_cruz_en_polea_alta
+
+:Brazos_en_cruz_en_polea_alta rdf:type :Ejercicios ,
+                                       owl:NamedIndividual ;
+                              
+                              :implicacionBrazo 3 ;
+                              
+                              :implicacionBiceps 3 ;
+                              
+                              :durezaRelativa 5 ;
+                              
+                              :esDeTipo :Auxiliar ;
+                              
+                              :implicaPrincipalmenteA :Biceps .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Cruce_de_pie_con_poleas
+
+:Cruce_de_pie_con_poleas rdf:type :Ejercicios ,
+                                  owl:NamedIndividual ;
+                         
+                         :implicacionDeltoidesAnterior 1 ;
+                         
+                         :implicacionHombro 1 ;
+                         
+                         :durezaRelativa 10 ;
+                         
+                         :implicacionPectoralSuperior 2 ;
+                         
+                         :implicacionPectoralInferior 2 ;
+                         
+                         :implicacionPectoralMedio 3 ;
+                         
+                         :implicacionPecho 7 ;
+                         
+                         :implicacionMusculos 8 ;
+                         
+                         :esDeTipo :Auxiliar ;
+                         
+                         :implicaPrincipalmenteA :Pecho .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Cuadriceps
+
+:Cuadriceps rdf:type :Subgrupos_musculares ,
+                     owl:NamedIndividual ;
+            
+            :esParteDe :Pierna .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Curl_biceps_alterno_con_supinacion
+
+:Curl_biceps_alterno_con_supinacion rdf:type :Ejercicios ,
+                                             owl:NamedIndividual ;
+                                    
+                                    :implicacionPectoralSuperior 1 ;
+                                    
+                                    :implicacionPecho 1 ;
+                                    
+                                    :durezaRelativa 11 ;
+                                    
+                                    :implicacionHombro 2 ;
+                                    
+                                    :implicacionAntebrazo 2 ;
+                                    
+                                    :implicacionDeltoidesAnterior 2 ;
+                                    
+                                    :implicacionBiceps 3 ;
+                                    
+                                    :implicacionBrazo 5 ;
+                                    
+                                    :implicacionMusculos 8 ;
+                                    
+                                    :implicaPrincipalmenteA :Biceps ;
+                                    
+                                    :esDeTipo :Secundario .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Curl_biceps_alterno_tipo_martillo
+
+:Curl_biceps_alterno_tipo_martillo rdf:type :Ejercicios ,
+                                            owl:NamedIndividual ;
+                                   
+                                   :implicacionBiceps 2 ;
+                                   
+                                   :implicacionAntebrazo 3 ;
+                                   
+                                   :implicacionMusculos 5 ;
+                                   
+                                   :implicacionBrazo 5 ;
+                                   
+                                   :durezaRelativa 9 ;
+                                   
+                                   :implicaPrincipalmenteA :Biceps ;
+                                   
+                                   :esDeTipo :Secundario .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Curl_biceps_concentrado_en_muslo
+
+:Curl_biceps_concentrado_en_muslo rdf:type :Ejercicios ,
+                                           owl:NamedIndividual ;
+                                  
+                                  :implicacionBiceps 3 ;
+                                  
+                                  :implicacionBrazo 3 ;
+                                  
+                                  :durezaRelativa 5 ;
+                                  
+                                  :esDeTipo :Auxiliar ;
+                                  
+                                  :implicaPrincipalmenteA :Biceps .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Curl_de_antebrazos_barra_en_pronacion
+
+:Curl_de_antebrazos_barra_en_pronacion rdf:type :Ejercicios ,
+                                                owl:NamedIndividual ;
+                                       
+                                       :implicacionMusculos 3 ;
+                                       
+                                       :implicacionBrazo 3 ;
+                                       
+                                       :implicacionAntebrazo 3 ;
+                                       
+                                       :durezaRelativa 5 ;
+                                       
+                                       :implicaPrincipalmenteA :Antebrazo ;
+                                       
+                                       :esDeTipo :Auxiliar .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Curl_de_antebrazos_barra_en_supinacion
+
+:Curl_de_antebrazos_barra_en_supinacion rdf:type :Ejercicios ,
+                                                 owl:NamedIndividual ;
+                                        
+                                        :implicacionAntebrazo 3 ;
+                                        
+                                        :implicacionMusculos 3 ;
+                                        
+                                        :implicacionBrazo 3 ;
+                                        
+                                        :durezaRelativa 5 ;
+                                        
+                                        :implicaPrincipalmenteA :Antebrazo ;
+                                        
+                                        :esDeTipo :Auxiliar .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Curl_de_biceps_con_barra
+
+:Curl_de_biceps_con_barra rdf:type :Ejercicios ,
+                                   owl:NamedIndividual ;
+                          
+                          :implicacionAntebrazo 2 ;
+                          
+                          :implicacionBiceps 3 ;
+                          
+                          :implicacionBrazo 5 ;
+                          
+                          :implicacionMusculos 5 ;
+                          
+                          :durezaRelativa 9 ;
+                          
+                          :implicaPrincipalmenteA :Biceps ;
+                          
+                          :esDeTipo :Primario .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Curl_de_biceps_con_barra_en_pronacion
+
+:Curl_de_biceps_con_barra_en_pronacion rdf:type :Ejercicios ,
+                                                owl:NamedIndividual ;
+                                       
+                                       :implicacionBiceps 2 ;
+                                       
+                                       :implicacionAntebrazo 3 ;
+                                       
+                                       :implicacionMusculos 5 ;
+                                       
+                                       :implicacionBrazo 5 ;
+                                       
+                                       :durezaRelativa 9 ;
+                                       
+                                       :implicaPrincipalmenteA :Biceps ;
+                                       
+                                       :esDeTipo :Secundario .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Curl_de_biceps_con_polea
+
+:Curl_de_biceps_con_polea rdf:type :Ejercicios ,
+                                   owl:NamedIndividual ;
+                          
+                          :implicacionBrazo 3 ;
+                          
+                          :implicacionBiceps 3 ;
+                          
+                          :implicacionMusculos 3 ;
+                          
+                          :durezaRelativa 5 ;
+                          
+                          :esDeTipo :Auxiliar ;
+                          
+                          :implicaPrincipalmenteA :Biceps .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Curl_de_biceps_en_banco_Scott
+
+:Curl_de_biceps_en_banco_Scott rdf:type :Ejercicios ,
+                                        owl:NamedIndividual ;
+                               
+                               :implicacionBrazo 3 ;
+                               
+                               :implicacionMusculos 3 ;
+                               
+                               :implicacionBiceps 3 ;
+                               
+                               :durezaRelativa 5 ;
+                               
+                               :implicaPrincipalmenteA :Biceps ;
+                               
+                               :esDeTipo :Primario .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Deltoides_anterior
+
+:Deltoides_anterior rdf:type :Subgrupos_musculares ,
+                             owl:NamedIndividual ;
+                    
+                    :esParteDe :Hombro .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Deltoides_medio
+
+:Deltoides_medio rdf:type :Subgrupos_musculares ,
+                          owl:NamedIndividual ;
+                 
+                 :esParteDe :Hombro .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Deltoides_posterior
+
+:Deltoides_posterior rdf:type :Subgrupos_musculares ,
+                              owl:NamedIndividual ;
+                     
+                     :esParteDe :Hombro .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Espalda
+
+:Espalda rdf:type :Grupos_musculares ,
+                  owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Espalda_dorsal
+
+:Espalda_dorsal rdf:type :Subgrupos_musculares ,
+                         owl:NamedIndividual ;
+                
+                :esParteDe :Espalda .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Espalda_redondo
+
+:Espalda_redondo rdf:type :Subgrupos_musculares ,
+                          owl:NamedIndividual ;
+                 
+                 :esParteDe :Espalda .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Femoral
+
+:Femoral rdf:type :Subgrupos_musculares ,
+                  owl:NamedIndividual ;
+         
+         :esParteDe :Pierna .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Flexiones_de_brazos_en_el_suelo
+
+:Flexiones_de_brazos_en_el_suelo rdf:type :Ejercicios ,
+                                          owl:NamedIndividual ;
+                                 
+                                 :implicacionMusculos 14 ;
+                                 
+                                 :implicacionTorso 2 ;
+                                 
+                                 :implicacionDeltoidesAnterior 2 ;
+                                 
+                                 :implicacionPectoralInferior 2 ;
+                                 
+                                 :implicacionPectoralSuperior 2 ;
+                                 
+                                 :implicacionSerrato 2 ;
+                                 
+                                 :implicacionHombro 2 ;
+                                 
+                                 :durezaRelativa 20 ;
+                                 
+                                 :implicacionBrazo 3 ;
+                                 
+                                 :implicacionTriceps 3 ;
+                                 
+                                 :implicacionPectoralMedio 3 ;
+                                 
+                                 :implicacionPecho 7 ;
+                                 
+                                 :implicaPrincipalmenteA :Pecho ;
+                                 
+                                 :esDeTipo :Primario .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Fondos_en_paralelas
+
+:Fondos_en_paralelas rdf:type :Ejercicios ,
+                              owl:NamedIndividual ;
+                     
+                     :implicacionTorso 1 ;
+                     
+                     :implicacionSerrato 1 ;
+                     
+                     :implicacionMusculos 13 ;
+                     
+                     :durezaRelativa 18 ;
+                     
+                     :implicacionDeltoidesAnterior 2 ;
+                     
+                     :implicacionHombro 2 ;
+                     
+                     :implicacionPectoralSuperior 2 ;
+                     
+                     :implicacionPectoralMedio 2 ;
+                     
+                     :implicacionPectoralInferior 3 ;
+                     
+                     :implicacionBrazo 3 ;
+                     
+                     :implicacionTriceps 3 ;
+                     
+                     :implicacionPecho 7 ;
+                     
+                     :implicaPrincipalmenteA :Pecho ;
+                     
+                     :esDeTipo :Primario .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Gemelo
+
+:Gemelo rdf:type :Subgrupos_musculares ,
+                 owl:NamedIndividual ;
+        
+        :esParteDe :Pierna .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Gluteo
+
+:Gluteo rdf:type :Subgrupos_musculares ,
+                 owl:NamedIndividual ;
+        
+        :esParteDe :Pierna .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Hombro
+
+:Hombro rdf:type :Grupos_musculares ,
+                 owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Oblicuo
+
+:Oblicuo rdf:type :Subgrupos_musculares ,
+                  owl:NamedIndividual ;
+         
+         :esParteDe :Abdomen .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Pecho
+
+:Pecho rdf:type :Grupos_musculares ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Pectoral_inferior
+
+:Pectoral_inferior rdf:type :Subgrupos_musculares ,
+                            owl:NamedIndividual ;
+                   
+                   :esParteDe :Pecho .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Pectoral_medio
+
+:Pectoral_medio rdf:type :Subgrupos_musculares ,
+                         owl:NamedIndividual ;
+                
+                :esParteDe :Pecho .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Pectoral_superior
+
+:Pectoral_superior rdf:type :Subgrupos_musculares ,
+                            owl:NamedIndividual ;
+                   
+                   :esParteDe :Pecho .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Pierna
+
+:Pierna rdf:type :Grupos_musculares ,
+                 owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Press_de_banca_declinado
+
+:Press_de_banca_declinado rdf:type :Ejercicios ,
+                                   owl:NamedIndividual ;
+                          
+                          :implicacionTorso 1 ;
+                          
+                          :implicacionSerrato 1 ;
+                          
+                          :implicacionMusculos 12 ;
+                          
+                          :durezaRelativa 16 ;
+                          
+                          :implicacionHombro 2 ;
+                          
+                          :implicacionDeltoidesAnterior 2 ;
+                          
+                          :implicacionBrazo 2 ;
+                          
+                          :implicacionPectoralMedio 2 ;
+                          
+                          :implicacionTriceps 2 ;
+                          
+                          :implicacionPectoralSuperior 2 ;
+                          
+                          :implicacionPectoralInferior 3 ;
+                          
+                          :implicacionPecho 7 ;
+                          
+                          :implicaPrincipalmenteA :Pecho ;
+                          
+                          :esDeTipo :Secundario .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Press_de_banca_inclinado
+
+:Press_de_banca_inclinado rdf:type :Ejercicios ,
+                                   owl:NamedIndividual ;
+                          
+                          :implicacionSerrato 1 ;
+                          
+                          :implicacionTorso 1 ;
+                          
+                          :implicacionMusculos 12 ;
+                          
+                          :durezaRelativa 16 ;
+                          
+                          :implicacionHombro 2 ;
+                          
+                          :implicacionDeltoidesAnterior 2 ;
+                          
+                          :implicacionPectoralInferior 2 ;
+                          
+                          :implicacionBrazo 2 ;
+                          
+                          :implicacionTriceps 2 ;
+                          
+                          :implicacionPectoralMedio 2 ;
+                          
+                          :implicacionPectoralSuperior 3 ;
+                          
+                          :implicacionPecho 7 ;
+                          
+                          :implicaPrincipalmenteA :Pecho ;
+                          
+                          :esDeTipo :Secundario .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Press_de_banca_plano
+
+:Press_de_banca_plano rdf:type :Ejercicios ,
+                               owl:NamedIndividual ;
+                      
+                      :implicacionTorso 1 ;
+                      
+                      :implicacionSerrato 1 ;
+                      
+                      :implicacionMusculos 12 ;
+                      
+                      :durezaRelativa 16 ;
+                      
+                      :implicacionTriceps 2 ;
+                      
+                      :implicacionHombro 2 ;
+                      
+                      :implicacionBrazo 2 ;
+                      
+                      :implicacionPectoralSuperior 2 ;
+                      
+                      :implicacionPectoralInferior 2 ;
+                      
+                      :implicacionPectoralMedio 3 ;
+                      
+                      :implicacionPecho 7 ;
+                      
+                      :implicaPrincipalmenteA :Pecho ;
+                      
+                      :esDeTipo :Primario .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Press_mancuernas_banco_inclinado
+
+:Press_mancuernas_banco_inclinado rdf:type :Ejercicios ,
+                                           owl:NamedIndividual ;
+                                  
+                                  :implicacionBrazo 1 ;
+                                  
+                                  :implicacionTriceps 1 ;
+                                  
+                                  :implicacionMusculos 12 ;
+                                  
+                                  :durezaRelativa 17 ;
+                                  
+                                  :implicacionHombro 2 ;
+                                  
+                                  :implicacionDeltoidesAnterior 2 ;
+                                  
+                                  :implicacionPectoralMedio 2 ;
+                                  
+                                  :implicacionTorso 2 ;
+                                  
+                                  :implicacionSerrato 2 ;
+                                  
+                                  :implicacionPectoralInferior 2 ;
+                                  
+                                  :implicacionPectoralSuperior 3 ;
+                                  
+                                  :implicacionPecho 7 ;
+                                  
+                                  :implicaPrincipalmenteA :Pecho ;
+                                  
+                                  :esDeTipo :Secundario .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Press_mancuernas_banco_plano
+
+:Press_mancuernas_banco_plano rdf:type :Ejercicios ,
+                                       owl:NamedIndividual ;
+                              
+                              :implicacionTorso 1 ;
+                              
+                              :implicacionSerrato 1 ;
+                              
+                              :implicacionMusculos 12 ;
+                              
+                              :durezaRelativa 16 ;
+                              
+                              :implicacionPectoralSuperior 2 ;
+                              
+                              :implicacionBrazo 2 ;
+                              
+                              :implicacionPectoralInferior 2 ;
+                              
+                              :implicacionHombro 2 ;
+                              
+                              :implicacionDeltoidesAnterior 2 ;
+                              
+                              :implicacionTriceps 2 ;
+                              
+                              :implicacionPectoralMedio 3 ;
+                              
+                              :implicacionPecho 7 ;
+                              
+                              :implicaPrincipalmenteA :Pecho ;
+                              
+                              :esDeTipo :Secundario .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Primario
+
+:Primario rdf:type :Tipos ,
+                   owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Pull-over_con_barra_en_banco_plano
+
+:Pull-over_con_barra_en_banco_plano rdf:type :Ejercicios ,
+                                             owl:NamedIndividual ;
+                                    
+                                    :implicacionMusculos 15 ;
+                                    
+                                    :implicacionEspaldaDorsal 2 ;
+                                    
+                                    :implicacionBrazo 2 ;
+                                    
+                                    :implicacionTorso 2 ;
+                                    
+                                    :implicacionEspaldaRedondo 2 ;
+                                    
+                                    :implicacionTriceps 2 ;
+                                    
+                                    :implicacionSerrato 2 ;
+                                    
+                                    :implicacionPectoralInferior 2 ;
+                                    
+                                    :implicacionPectoralSuperior 2 ;
+                                    
+                                    :durezaRelativa 26 ;
+                                    
+                                    :implicacionPectoralMedio 3 ;
+                                    
+                                    :implicacionEspalda 4 ;
+                                    
+                                    :implicacionPecho 7 ;
+                                    
+                                    :implicaPrincipalmenteA :Pecho ;
+                                    
+                                    :esDeTipo :Secundario .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Pull-over_con_mancuerna
+
+:Pull-over_con_mancuerna rdf:type :Ejercicios ,
+                                  owl:NamedIndividual ;
+                         
+                         :implicacionMusculos 15 ;
+                         
+                         :implicacionTorso 2 ;
+                         
+                         :implicacionBrazo 2 ;
+                         
+                         :implicacionPectoralInferior 2 ;
+                         
+                         :implicacionSerrato 2 ;
+                         
+                         :implicacionPectoralSuperior 2 ;
+                         
+                         :implicacionEspaldaRedondo 2 ;
+                         
+                         :implicacionTriceps 2 ;
+                         
+                         :implicacionEspaldaDorsal 2 ;
+                         
+                         :durezaRelativa 26 ;
+                         
+                         :implicacionPectoralMedio 3 ;
+                         
+                         :implicacionEspalda 4 ;
+                         
+                         :implicacionPecho 7 ;
+                         
+                         :implicaPrincipalmenteA :Pecho ;
+                         
+                         :esDeTipo :Secundario .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Sacrolumbar
+
+:Sacrolumbar rdf:type :Subgrupos_musculares ,
+                      owl:NamedIndividual ;
+             
+             :esParteDe :Espalda .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Secundario
+
+:Secundario rdf:type :Tipos ,
+                     owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Serrato
+
+:Serrato rdf:type :Subgrupos_musculares ,
+                  owl:NamedIndividual ;
+         
+         :esParteDe :Abdomen .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Torso
+
+:Torso rdf:type :Grupos_musculares ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Trapecio
+
+:Trapecio rdf:type :Subgrupos_musculares ,
+                   owl:NamedIndividual ;
+          
+          :esParteDe :Espalda .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Triceps
+
+:Triceps rdf:type :Subgrupos_musculares ,
+                  owl:NamedIndividual ;
+         
+         :esParteDe :Brazo .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5#Extension_alternada_polea_alta_en_supinacion
+
+:Extension_alternada_polea_alta_en_supinacion rdf:type :Ejercicios ,
+                                                       owl:NamedIndividual ;
+                                              
+                                              :implicacionMusculos 3 ;
+                                              
+                                              :implicacionBrazo 3 ;
+                                              
+                                              :implicacionTriceps 3 ;
+                                              
+                                              :durezaRelativa 5 ;
+                                              
+                                              :esDeTipo :Auxiliar ;
+                                              
+                                              :implicaPrincipalmenteA :Triceps .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5#Extension_codos_con_mancuerna_a_dos_manos
+
+:Extension_codos_con_mancuerna_a_dos_manos rdf:type :Ejercicios ,
+                                                    owl:NamedIndividual ;
+                                           
+                                           :implicacionBrazo 3 ;
+                                           
+                                           :implicacionMusculos 3 ;
+                                           
+                                           :implicacionTriceps 3 ;
+                                           
+                                           :durezaRelativa 5 ;
+                                           
+                                           :esDeTipo :Auxiliar ;
+                                           
+                                           :implicaPrincipalmenteA :Triceps .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5#Extension_de_codos_sentado_con_barra
+
+:Extension_de_codos_sentado_con_barra rdf:type :Ejercicios ,
+                                               owl:NamedIndividual ;
+                                      
+                                      :implicacionTriceps 3 ;
+                                      
+                                      :implicacionMusculos 3 ;
+                                      
+                                      :implicacionBrazo 3 ;
+                                      
+                                      :durezaRelativa 5 ;
+                                      
+                                      :esDeTipo :Secundario ;
+                                      
+                                      :implicaPrincipalmenteA :Triceps .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5#Extension_de_los_codos_sentado_con_barra
+
+:Extension_de_los_codos_sentado_con_barra rdf:type :Ejercicios ,
+                                                   owl:NamedIndividual ;
+                                          
+                                          :implicacionMusculos 3 ;
+                                          
+                                          :implicacionBrazo 3 ;
+                                          
+                                          :implicacionTriceps 3 ;
+                                          
+                                          :durezaRelativa 5 ;
+                                          
+                                          :esDeTipo :Secundario ;
+                                          
+                                          :implicaPrincipalmenteA :Triceps .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5#Extension_de_triceps_en_polea_agarre_invertido
+
+:Extension_de_triceps_en_polea_agarre_invertido rdf:type :Ejercicios ,
+                                                         owl:NamedIndividual ;
+                                                
+                                                :implicacionAntebrazo 2 ;
+                                                
+                                                :implicacionTriceps 3 ;
+                                                
+                                                :implicacionMusculos 5 ;
+                                                
+                                                :implicacionBrazo 5 ;
+                                                
+                                                :durezaRelativa 9 ;
+                                                
+                                                :esDeTipo :Auxiliar ;
+                                                
+                                                :implicaPrincipalmenteA :Triceps .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5#Extension_de_triceps_en_polea_alta
+
+:Extension_de_triceps_en_polea_alta rdf:type :Ejercicios ,
+                                             owl:NamedIndividual ;
+                                    
+                                    :implicacionMusculos 3 ;
+                                    
+                                    :implicacionBrazo 3 ;
+                                    
+                                    :implicacionTriceps 3 ;
+                                    
+                                    :durezaRelativa 5 ;
+                                    
+                                    :esDeTipo :Auxiliar ;
+                                    
+                                    :implicaPrincipalmenteA :Triceps .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5#Extension_de_triceps_en_polea_alta_con_cuerda
+
+:Extension_de_triceps_en_polea_alta_con_cuerda rdf:type :Ejercicios ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               :esDeTipo :Auxiliar ;
+                                               
+                                               :implicaPrincipalmenteA :Triceps .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5#Extension_vertical_de_codos_con_mancuerna
+
+:Extension_vertical_de_codos_con_mancuerna rdf:type :Ejercicios ,
+                                                    owl:NamedIndividual ;
+                                           
+                                           :implicacionMusculos 3 ;
+                                           
+                                           :implicacionBrazo 3 ;
+                                           
+                                           :implicacionTriceps 3 ;
+                                           
+                                           :durezaRelativa 5 ;
+                                           
+                                           :esDeTipo :Secundario ;
+                                           
+                                           :implicaPrincipalmenteA :Triceps .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5#Fondos_en_paralelas
+
+:Fondos_en_paralelas rdf:type :Ejercicios ,
+                              owl:NamedIndividual ;
+                     
+                     :implicacionTorso 1 ;
+                     
+                     :implicacionSerrato 1 ;
+                     
+                     :implicacionMusculos 13 ;
+                     
+                     :durezaRelativa 18 ;
+                     
+                     :implicacionHombro 2 ;
+                     
+                     :implicacionDeltoidesAnterior 2 ;
+                     
+                     :implicacionPectoralMedio 2 ;
+                     
+                     :implicacionPectoralSuperior 2 ;
+                     
+                     :implicacionPectoralInferior 3 ;
+                     
+                     :implicacionPecho 7 ;
+                     
+                     :esDeTipo :Primario ;
+                     
+                     :implicaPrincipalmenteA :Triceps .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5#Press_de_banca_plano_con_agarre_estrecho
+
+:Press_de_banca_plano_con_agarre_estrecho rdf:type :Ejercicios ,
+                                                   owl:NamedIndividual ;
+                                          
+                                          :implicacionTorso 1 ;
+                                          
+                                          :implicacionSerrato 1 ;
+                                          
+                                          :implicacionMusculos 12 ;
+                                          
+                                          :durezaRelativa 17 ;
+                                          
+                                          :implicacionPectoralSuperior 2 ;
+                                          
+                                          :implicacionPectoralMedio 2 ;
+                                          
+                                          :implicacionDeltoidesAnterior 2 ;
+                                          
+                                          :implicacionHombro 2 ;
+                                          
+                                          :implicacionPectoralInferior 2 ;
+                                          
+                                          :implicacionTriceps 3 ;
+                                          
+                                          :implicacionBrazo 3 ;
+                                          
+                                          :implicacionPecho 6 ;
+                                          
+                                          :esDeTipo :Primario ;
+                                          
+                                          :implicaPrincipalmenteA :Triceps .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5#Press_frances_en_banco_plano
+
+:Press_frances_en_banco_plano rdf:type :Ejercicios ,
+                                       owl:NamedIndividual ;
+                              
+                              :implicacionMusculos 3 ;
+                              
+                              :implicacionTriceps 3 ;
+                              
+                              :implicacionBrazo 3 ;
+                              
+                              :durezaRelativa 5 ;
+                              
+                              :esDeTipo :Primario ;
+                              
+                              :implicaPrincipalmenteA :Triceps .
+
+
+
+
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+
