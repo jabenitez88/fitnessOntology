@@ -12,9 +12,7 @@
                                                                                
                                                                                rdfs:comment "Ontología fitness orientada principalmente a almacenar la mayor información posible para la creación de rutinas personalizadas e individualizadas a cada persona en función de su objetivo (ganancia de fuerza, hipertrofia, resistencias, potencia o simplemente mantenimiento)."@es ;
                                                                                
-                                                                               owl:versionInfo "versión 14.07.10"@es ;
-                                                                               
-                                                                               owl:imports <http://xmlns.com/foaf/0.1/> .
+                                                                               owl:versionInfo "versión 14.07.10"@es .
 
 
 #################################################################
@@ -566,8 +564,7 @@
                
                rdfs:label "hasBodyWeight"@en ;
                
-               rdfs:domain <http://schema.org/Person> ,
-                           :Personas .
+               rdfs:domain :Personas .
 
 
 
@@ -589,8 +586,7 @@
            
            rdfs:label "hasGender"@en ;
            
-           rdfs:domain <http://schema.org/Person> ,
-                       :Personas ;
+           rdfs:domain :Personas ;
            
            rdfs:range xsd:string .
 
@@ -602,8 +598,7 @@
            
            rdfs:label "hasHeight"@en ;
            
-           rdfs:domain <http://schema.org/Person> ,
-                       :Personas ;
+           rdfs:domain :Personas ;
            
            rdfs:range owl:real .
 
@@ -615,8 +610,7 @@
         
         rdfs:label "hasHip"@en ;
         
-        rdfs:domain <http://schema.org/Person> ,
-                    :Personas ;
+        rdfs:domain :Personas ;
         
         rdfs:range xsd:positiveInteger .
 
@@ -651,8 +645,7 @@
          
          rdfs:label "hasNeck"@en ;
          
-         rdfs:domain <http://schema.org/Person> ,
-                     :Personas ;
+         rdfs:domain :Personas ;
          
          rdfs:range xsd:positiveInteger .
 
@@ -782,8 +775,7 @@
           
           rdfs:label "hasWaist"@en ;
           
-          rdfs:domain <http://schema.org/Person> ,
-                      :Personas ;
+          rdfs:domain :Personas ;
           
           rdfs:range xsd:positiveInteger .
 
@@ -795,8 +787,7 @@
           
           rdfs:label "hasWrist"@en ;
           
-          rdfs:domain <http://schema.org/Person> ,
-                      :Personas ;
+          rdfs:domain :Personas ;
           
           rdfs:range xsd:positiveInteger .
 
