@@ -1004,6 +1004,17 @@
 
 
 
+###  http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5#Entrenamiento
+
+:Entrenamiento rdf:type owl:Class ;
+               
+               rdfs:label "Workout"@en ,
+                          "Entrenamiento"@es ;
+               
+               rdfs:subClassOf :Entrenamiento .
+
+
+
 
 
 #################################################################
