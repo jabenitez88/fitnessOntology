@@ -8,11 +8,11 @@
 
 <http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5> rdf:type owl:Ontology ;
                                                                                
-                                                                               owl:versionInfo "version 15.01.08"@en ;
+                                                                               owl:versionInfo "version 14.11.08"@en ;
                                                                                
                                                                                rdfs:comment "Ontología fitness orientada principalmente a almacenar la mayor información posible para la creación de rutinas personalizadas e individualizadas a cada persona en función de su objetivo (ganancia de fuerza, hipertrofia, resistencias, potencia o simplemente mantenimiento)."@es ;
                                                                                
-                                                                               owl:versionInfo "versión 15.01.17"@es ;
+                                                                               owl:versionInfo "versión 14.11.08"@es ;
                                                                                
                                                                                owl:imports <http://xmlns.com/foaf/0.1/> .
 
@@ -48,7 +48,9 @@
                    
                    rdfs:range :Entrenamiento_Ordenado ;
                    
-                   owl:inverseOf :hasWorkouts .
+                   owl:inverseOf :hasWorkouts ;
+                   
+                   rdfs:domain :Entrenamientoo .
 
 
 
@@ -85,7 +87,9 @@
             
             rdfs:domain :Sesion ;
             
-            owl:inverseOf :hasSession .
+            owl:inverseOf :hasSession ;
+            
+            rdfs:range :Entrenamientoo .
 
 
 
@@ -125,6 +129,8 @@
             rdfs:domain :Entrenamiento ;
             
             rdfs:range :Sesion ;
+            
+            rdfs:domain :Entrenamientoo ;
             
             rdfs:subPropertyOf owl:topObjectProperty .
 
@@ -237,6 +243,12 @@
                      rdfs:label "hasScheduledSession"@en ,
                                 "tieneSesionOrdenada"@es ;
                      
+                     rdfs:domain :Entrenamiento ;
+                     
+                     rdfs:range :Sesion_Ordenada ;
+                     
+                     rdfs:domain :Entrenamientoo ;
+                     
                      rdfs:subPropertyOf owl:topObjectProperty .
 
 
@@ -283,6 +295,14 @@
                      rdfs:domain :Cuestionario ;
                      
                      rdfs:range xsd:positiveInteger .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#hasEEE
+
+:hasEEE rdf:type owl:DatatypeProperty ;
+        
+        rdfs:domain :Entrenamientoo .
 
 
 
@@ -905,9 +925,7 @@
 :Entrenamiento rdf:type owl:Class ;
                
                rdfs:label "Physical_activity"@en ,
-                          "Workout"@en ,
-                          "Ejercicio_fisico"@es ,
-                          "Entrenamiento"@es ;
+                          "Ejercicio_fisico"@es ;
                
                rdfs:subClassOf :Entrenamiento .
 
@@ -917,8 +935,8 @@
 
 :Entrenamiento_Ordenado rdf:type owl:Class ;
                         
-                        rdfs:label "Workout"@en ,
-                                   "Entrenamiento"@es ;
+                        rdfs:label "Scheduled_Workout"@en ,
+                                   "Entrenamiento_Ordenado"@es ;
                         
                         rdfs:subClassOf :Entrenamiento .
 
@@ -975,6 +993,17 @@
 
 
 
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Sesion_Ordenada
+
+:Sesion_Ordenada rdf:type owl:Class ;
+                 
+                 rdfs:label "ScheduledSession"@en ,
+                            "Sesion_ordenada"@es ;
+                 
+                 rdfs:subClassOf :Entrenamiento .
+
+
+
 ###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Subgrupos_musculares
 
 :Subgrupos_musculares rdf:type owl:Class ;
@@ -992,6 +1021,14 @@
        
        rdfs:label "Types"@en ,
                   "Tipos"@es .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/7/untitled-ontology-5#Entrenamientoo
+
+:Entrenamientoo rdf:type owl:Class ;
+                
+                rdfs:subClassOf :Entrenamiento .
 
 
 
@@ -1853,77 +1890,200 @@
 
 
 
-###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Entrenamiento1
-
-:Entrenamiento1 rdf:type :Entrenamiento_Ordenado ,
-                         owl:NamedIndividual ;
-                
-                rdfs:label "Workout1"@en ,
-                           "Entrenamiento1"@es ;
-                
-                :hasSession :PressBancaSeries3Reps10 ,
-                            :PressMilitarSeries3Reps10 ,
-                            :SentadillasSeries3Reps10 ,
-                            :ZancadasSeries3Reps12 .
-
-
-
 ###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Entrenamiento2
 
-:Entrenamiento2 rdf:type :Entrenamiento_Ordenado ,
+:Entrenamiento2 rdf:type :Entrenamientoo ,
                          owl:NamedIndividual ;
                 
                 rdfs:label "Workout2"@en ,
                            "Entrenamiento2"@es ;
                 
-                :hasSession :PressBancaSeries4Reps10 ,
-                            :PressMilitarSeries4Reps10 ,
-                            :SentadillasSeries4Reps10 ,
-                            :ZancadasSeries3Reps12 .
+                :tieneSesionOrdenada :PressBancaSeries3Reps10-1 ,
+                                     :RemoSeries3Reps10-3 ,
+                                     :SentadillasSeries3Reps10-1 .
 
 
 
 ###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Entrenamiento3
 
-:Entrenamiento3 rdf:type :Entrenamiento_Ordenado ,
+:Entrenamiento3 rdf:type :Entrenamientoo ,
                          owl:NamedIndividual ;
                 
                 rdfs:label "Workout3"@en ,
                            "Entrenamiento3"@es ;
                 
-                :hasSession :PressBancaSeries5Reps10 ,
-                            :PressMilitarSeries5Reps10 ,
-                            :SentadillasSeries5Reps10 ,
-                            :ZancadasSeries3Reps12 .
+                :tieneSesionOrdenada :FondosSeries3Reps8-3 ,
+                                     :PesoMuertoSeries3Reps8-2 ,
+                                     :PressBancaSeries3Reps10-1 ,
+                                     :ZancadasSeries4Reps12-4 .
 
 
 
-###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Entrenamiento4
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Entrenamiento4-5x5A
 
-:Entrenamiento4 rdf:type :Entrenamiento_Ordenado ,
-                         owl:NamedIndividual ;
-                
-                rdfs:label "Workout4"@en ,
-                           "Entrenamiento4Torso"@es ;
-                
-                :hasSession :DominadasSeries5Reps5 ,
-                            :FondosSeries3Reps5 ,
-                            :PressBancaSeries3Reps5 ,
-                            :RemoSeries5Reps10 .
-
+:Entrenamiento4-5x5A rdf:type :Entrenamientoo ,
+                              owl:NamedIndividual ;
+                     
+                     rdfs:label "Workout4-5x5A"@en ,
+                                "Entrenamiento4-5x5A"@es ;
+                     
+                     :tieneSesionOrdenada :FondosSeries5Reps5 ,
+                                          :PressBancaSeries5Reps5-1 ,
+                                          :SentadillasSeries5Reps5-2 .
 
 
-###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Entrenamiento5
 
-:Entrenamiento5 rdf:type :Entrenamiento_Ordenado ,
-                         owl:NamedIndividual ;
-                
-                rdfs:label "Workout5"@en ,
-                           "Entrenamiento5Pierna"@es ;
-                
-                :hasSession :PesoMuertoSeries5Reps5 ,
-                            :SentadillasSeries5Reps5 ,
-                            :ZancadasSeries3Reps12 .
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Entrenamiento5-5x5B
+
+:Entrenamiento5-5x5B rdf:type :Entrenamientoo ,
+                              owl:NamedIndividual ;
+                     
+                     rdfs:label "Workout5-5x5B"@en ,
+                                "Entrenamiento5-5x5B"@es ;
+                     
+                     :hasSession :DominadasSeries5Reps5 ,
+                                 :PesoMuertoSeries5Reps5 ,
+                                 :ZancadasSeries3Reps12 .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#EntrenamientoOrdenado1E
+
+:EntrenamientoOrdenado1E rdf:type :Entrenamiento_Ordenado ,
+                                  owl:NamedIndividual ;
+                         
+                         rdfs:label "ScheduledWorkout1E"@en ,
+                                    "EntrenamientoProgramado1E"@es ;
+                         
+                         :hasOrderNumber 5 ;
+                         
+                         :hasWorkouts :Workout1 .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#EntrenamientoOrdenado1Miercoles
+
+:EntrenamientoOrdenado1Miercoles rdf:type :Entrenamiento_Ordenado ,
+                                          owl:NamedIndividual ;
+                                 
+                                 rdfs:label "ScheduledWorkout1C"@en ,
+                                            "EntrenamientoProgramado1C"@es ;
+                                 
+                                 :hasOrderNumber 3 ;
+                                 
+                                 :hasWorkouts :Workout1 .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#EntrenamientoProgramado2A
+
+:EntrenamientoProgramado2A rdf:type :Entrenamiento_Ordenado ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "ScheduledWorkout2A"@en ,
+                                      "EntrenamientoProgramado2A"@es ;
+                           
+                           :hasOrderNumber 1 ;
+                           
+                           :hasWorkouts :Entrenamiento2 .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#EntrenamientoProgramado2D
+
+:EntrenamientoProgramado2D rdf:type :Entrenamiento_Ordenado ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "ScheduledWorkout2D"@en ,
+                                      "EntrenamientoProgramado2D"@es ;
+                           
+                           :hasOrderNumber 4 ;
+                           
+                           :hasWorkouts :Entrenamiento2 .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#EntrenamientoProgramado3B
+
+:EntrenamientoProgramado3B rdf:type :Entrenamiento_Ordenado ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "ScheduledWorkout3B"@en ,
+                                      "EntrenamientoProgramado3B"@es ;
+                           
+                           :hasOrderNumber 2 ;
+                           
+                           :hasWorkouts :Entrenamiento3 .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#EntrenamientoProgramado3E
+
+:EntrenamientoProgramado3E rdf:type :Entrenamiento_Ordenado ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "ScheduledWorkout3E"@en ,
+                                      "EntrenamientoProgramado3E"@es ;
+                           
+                           :hasOrderNumber 5 ;
+                           
+                           :hasWorkouts :Entrenamiento3 .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#EntrenamientoProgramado4A
+
+:EntrenamientoProgramado4A rdf:type :Entrenamiento_Ordenado ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "ScheduledWorkout4A"@en ,
+                                      "EntrenamientoProgramado4A"@es ;
+                           
+                           :hasOrderNumber 1 ;
+                           
+                           :hasWorkouts :Entrenamiento4-5x5A .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#EntrenamientoProgramado4C
+
+:EntrenamientoProgramado4C rdf:type :Entrenamiento_Ordenado ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "ScheduledWorkout4C"@en ,
+                                      "EntrenamientoProgramado4C"@es ;
+                           
+                           :hasOrderNumber 3 ;
+                           
+                           :hasWorkouts :Entrenamiento4-5x5A .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#EntrenamientoProgramado5C
+
+:EntrenamientoProgramado5C rdf:type :Entrenamiento_Ordenado ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "ScheduledWorkout5C"@en ,
+                                      "EntrenamientoProgramado5C"@es ;
+                           
+                           :hasOrderNumber 3 ;
+                           
+                           :hasWorkouts :Entrenamiento5-5x5B .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#EntrenamientoProgramado5G
+
+:EntrenamientoProgramado5G rdf:type :Entrenamiento_Ordenado ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "ScheduledWorkout5G"@en ,
+                                      "EntrenamientoProgramado5G"@es ;
+                           
+                           :hasOrderNumber 7 ;
+                           
+                           :hasWorkouts :Entrenamiento5-5x5B .
 
 
 
@@ -2263,6 +2423,20 @@
 
 
 
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#FondosSeries3Reps8-3
+
+:FondosSeries3Reps8-3 rdf:type :Sesion_Ordenada ,
+                               owl:NamedIndividual ;
+                      
+                      rdfs:label "DipsSeries3Reps8-3"@en ,
+                                 "FondosSeries3Reps8-3"@es ;
+                      
+                      :hasOrderNumber 3 ;
+                      
+                      :hasSession :FondosSeries3Reps8 .
+
+
+
 ###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#FondosSeries4Reps3
 
 :FondosSeries4Reps3 rdf:type :Sesion ,
@@ -2338,6 +2512,29 @@
                     :hasNumberOfSeries 4 ;
                     
                     :hasNumberOfReps 8 ;
+                    
+                    :hasExercise :Fondos_en_paralelas .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#FondosSeries5Reps5
+
+:FondosSeries5Reps5 rdf:type :Sesion ,
+                             :Sesion_Ordenada ,
+                             owl:NamedIndividual ;
+                    
+                    rdfs:label "DipsSeries5Reps5"@en ,
+                               "DipsSeries5Reps5-3"@en ,
+                               "FondosSeries5Reps5"@es ,
+                               "FondosSeries5Reps5-3"@es ;
+                    
+                    :hasOrderNumber 3 ;
+                    
+                    :hasNumberOfReps 5 ;
+                    
+                    :hasNumberOfSeries 5 ;
+                    
+                    :hasSession :FondosSeries5Reps5 ;
                     
                     :hasExercise :Fondos_en_paralelas .
 
@@ -2620,6 +2817,20 @@
 
 
 
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#PesoMuertoSeries3Reps8-2
+
+:PesoMuertoSeries3Reps8-2 rdf:type :Sesion_Ordenada ,
+                                   owl:NamedIndividual ;
+                          
+                          rdfs:label "DeadliftSeries3Reps8-2"@en ,
+                                     "PesoMuertoSeries3Reps8-2"@es ;
+                          
+                          :hasOrderNumber 2 ;
+                          
+                          :hasSession :PesoMuertoSeries3Reps8 .
+
+
+
 ###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#PesoMuertoSeries4Reps5
 
 :PesoMuertoSeries4Reps5 rdf:type :Sesion ,
@@ -2778,13 +2989,25 @@
                          rdfs:label "BenchPressSeries3Reps10"@en ,
                                     "PressBancaSeries3Reps10"@es ;
                          
-                         :hasOrderNumber 1 ;
-                         
                          :hasNumberOfReps 10 ;
                          
                          :hasNumberOfSeries 3 ;
                          
                          :hasExercise :Press_de_banca_plano .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#PressBancaSeries3Reps10-1
+
+:PressBancaSeries3Reps10-1 rdf:type :Sesion_Ordenada ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "BenchPressSeries3Reps10-1"@en ,
+                                      "PressBancaSeries3Reps10-1"@es ;
+                           
+                           :hasOrderNumber 1 ;
+                           
+                           :hasSession :PressBancaSeries3Reps10 .
 
 
 
@@ -2928,7 +3151,23 @@
                         
                         :hasNumberOfReps 5 ;
                         
+                        :hasSession :FondosSeries5Reps5 ;
+                        
                         :hasExercise :Press_de_banca_plano .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#PressBancaSeries5Reps5-1
+
+:PressBancaSeries5Reps5-1 rdf:type :Sesion_Ordenada ,
+                                   owl:NamedIndividual ;
+                          
+                          rdfs:label "BenchPressSeries5Reps5-1"@en ,
+                                     "PressBancaSeries5Reps5-1"@es ;
+                          
+                          :hasOrderNumber 1 ;
+                          
+                          :hasSession :PressBancaSeries5Reps5 .
 
 
 
@@ -2977,6 +3216,20 @@
                            :hasNumberOfSeries 3 ;
                            
                            :hasExercise :Press_militar_con_barra .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#PressMilitarSeries3Reps10-3
+
+:PressMilitarSeries3Reps10-3 rdf:type :Sesion_Ordenada ,
+                                      owl:NamedIndividual ;
+                             
+                             rdfs:label "MilitaryPressSeries3Reps10-3"@en ,
+                                        "PressMilitarSeries3Reps10-3"@es ;
+                             
+                             :hasOrderNumber 3 ;
+                             
+                             :hasSession :PressMilitarSeries3Reps10 .
 
 
 
@@ -3556,6 +3809,20 @@
 
 
 
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#RemoSeries3Reps10-3
+
+:RemoSeries3Reps10-3 rdf:type :Sesion_Ordenada ,
+                              owl:NamedIndividual ;
+                     
+                     rdfs:label "RowSeries3Reps10-3"@en ,
+                                "RemoSeries3Reps10-3"@es ;
+                     
+                     :hasOrderNumber 3 ;
+                     
+                     :hasSession :RemoSeries3Reps10 .
+
+
+
 ###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#RemoSeries3Reps6
 
 :RemoSeries3Reps6 rdf:type :Sesion ,
@@ -3788,10 +4055,15 @@
          
          :hasMainlyGoal "Iniciarse en el mundo de los entrenamientos con cargas" ;
          
+         :tieneEntrenamientoProgramado :EntrenamientoOrdenado1E ,
+                                       :EntrenamientoOrdenado1Miercoles ;
+         
          :tieneDietaRecomendada :Hipocalórica ,
                                 :Normocalorica ;
          
-         :hasUserLevel :Principiante .
+         :hasUserLevel :Principiante ;
+         
+         :tieneEntrenamientoProgramado :ScheduledWorkout1 .
 
 
 
@@ -3801,6 +4073,11 @@
                   owl:NamedIndividual ;
          
          :hasMainlyGoal "Iniciarse en el mundo de las pesas" ;
+         
+         :tieneEntrenamientoProgramado :EntrenamientoProgramado2A ,
+                                       :EntrenamientoProgramado2D ,
+                                       :EntrenamientoProgramado3B ,
+                                       :EntrenamientoProgramado3E ;
          
          :tieneDietaRecomendada :Hipocalórica ,
                                 :Normocalorica ;
@@ -3816,11 +4093,18 @@
              
              :hasMainlyGoal "Ganar fuerza" ;
              
-             :hasUserLevel :Avanzado ,
-                           :Experto ,
+             :hasUserLevel :Avanzado ;
+             
+             :tieneEntrenamientoProgramado :EntrenamientoProgramado4A ,
+                                           :EntrenamientoProgramado5C ,
+                                           :EntrenamientoProgramado5G ;
+             
+             :hasUserLevel :Experto ,
                            :Intermedio ;
              
-             :tieneDietaRecomendada :Normocalorica .
+             :tieneDietaRecomendada :Normocalorica ;
+             
+             :tieneEntrenamientoProgramado :ScheduledWorkout4E .
 
 
 
@@ -3833,6 +4117,34 @@
                         "Sacrolumbar"@es ;
              
              :esParteDe :Espalda .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#ScheduledWorkout1
+
+:ScheduledWorkout1 rdf:type :Entrenamiento_Ordenado ,
+                            owl:NamedIndividual ;
+                   
+                   rdfs:label "ScheduledWorkout1A"@en ,
+                              "EntrenamientoProgramado1A"@es ;
+                   
+                   :hasOrderNumber 1 ;
+                   
+                   :hasWorkouts :Workout1 .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#ScheduledWorkout4E
+
+:ScheduledWorkout4E rdf:type :Entrenamiento_Ordenado ,
+                             owl:NamedIndividual ;
+                    
+                    rdfs:label "ScheduledWorkout4E"@en ,
+                               "EntrenamientoProgramado4E"@es ;
+                    
+                    :hasOrderNumber 5 ;
+                    
+                    :hasWorkouts :Entrenamiento4-5x5A .
 
 
 
@@ -3931,6 +4243,20 @@
                           :hasNumberOfSeries 3 ;
                           
                           :hasExercise :Sentadillas .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#SentadillasSeries3Reps10-1
+
+:SentadillasSeries3Reps10-1 rdf:type :Sesion_Ordenada ,
+                                     owl:NamedIndividual ;
+                            
+                            rdfs:label "SquatsSeries3Reps10-2"@en ,
+                                       "SentadillasSeries3Reps10-2"@es ;
+                            
+                            :hasOrderNumber 2 ;
+                            
+                            :hasSession :SentadillasSeries3Reps10 .
 
 
 
@@ -4074,6 +4400,20 @@
                          :hasNumberOfSeries 5 ;
                          
                          :hasExercise :Sentadillas .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#SentadillasSeries5Reps5-2
+
+:SentadillasSeries5Reps5-2 rdf:type :Sesion_Ordenada ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "SquatsSeries5Reps5-2"@en ,
+                                      "SentadillasSeries5Reps5-2"@es ;
+                           
+                           :hasOrderNumber 2 ;
+                           
+                           :hasSession :SentadillasSeries5Reps5 .
 
 
 
@@ -4231,6 +4571,20 @@
 
 
 
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Workout1
+
+:Workout1 rdf:type :Entrenamientoo ,
+                   owl:NamedIndividual ;
+          
+          rdfs:label "Workout1"@en ,
+                     "Entrenamiento1"@es ;
+          
+          :tieneSesionOrdenada :PressBancaSeries3Reps10-1 ,
+                               :PressMilitarSeries3Reps10-3 ,
+                               :SentadillasSeries3Reps10-1 .
+
+
+
 ###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#Zancadas
 
 :Zancadas rdf:type :Ejercicios ,
@@ -4253,6 +4607,19 @@
                        :hasNumberOfSeries 4 ;
                        
                        :hasExercise :Zancadas .
+
+
+
+###  http://www.semanticweb.org/josealberto/ontologies/2014/2/untitled-ontology-5#ZancadasSeries4Reps12-4
+
+:ZancadasSeries4Reps12-4 rdf:type :Sesion_Ordenada ,
+                                  owl:NamedIndividual ;
+                         
+                         rdfs:label "ZancadasSeries4Reps12-4"@es ;
+                         
+                         :hasOrderNumber 4 ;
+                         
+                         :hasSession :ZancadasSeries3Reps12 .
 
 
 
